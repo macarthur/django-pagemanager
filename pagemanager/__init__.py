@@ -194,7 +194,12 @@ class PageAdmin(admin.ModelAdmin):
         return copy
 
     def get_urls(self):
-        from django.conf.urls.defaults import patterns, url
+        from django import VERSION as django_version
+        if django_version >= (1, 5, 0):
+            from django.conf.urls import patterns, url
+        else:
+            from django.conf.urls.defaults import patterns, url
+
         parents_orders_vw = self.admin_site.admin_view(
             self.parents_orders_view
         )

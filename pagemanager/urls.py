@@ -1,4 +1,8 @@
-from django.conf.urls.defaults import *
+from django import VERSION as django_version
+if django_version >= (1, 5, 0):
+    from django.conf.urls import *
+else:
+    from django.conf.urls.defaults import *
 
 from pagemanager.views import HomepageView, PageView
 
