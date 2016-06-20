@@ -30,4 +30,5 @@ setup(
         'django-mptt>=0.4.2',
         'django-reversion>=1.4',
     ],
+    include_package_data=True,
 )
