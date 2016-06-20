@@ -402,7 +402,7 @@ class RedirectPage(PageLayout):
     """
     A page that lives in the tree, but redirects to another URL when accessed.
     """
-    url = models.URLField(verify_exists=False)
+    url = models.URLField()
 
     class Meta:
         verbose_name = 'Redirect'
